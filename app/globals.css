@@ -1,0 +1,202 @@
+/* All styling for the whole app lives in this one plain CSS file. */
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --border: #e2e2e2;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --danger: #dc2626;
+  --muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Centered column used by every page. */
+.container {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  flex: 1;
+}
+
+/* --- Navbar --- */
+.navbar {
+  border-bottom: 1px solid var(--border);
+}
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--foreground);
+}
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.navbar-user {
+  color: var(--muted);
+}
+
+/* A button styled to look like a plain link, used for Logout. */
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--primary);
+  cursor: pointer;
+}
+.link-button:hover {
+  text-decoration: underline;
+}
+
+/* --- Forms --- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 420px;
+}
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+.form input,
+.form textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font: inherit;
+}
+.form textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.button {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: fit-content;
+}
+.button:hover {
+  background: var(--primary-dark);
+}
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.button-danger {
+  background: var(--danger);
+}
+.button-danger:hover {
+  background: #b91c1c;
+}
+.button-secondary {
+  background: var(--muted);
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* --- Status messages (loading/error/empty) --- */
+.status {
+  color: var(--muted);
+}
+.error {
+  color: var(--danger);
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 10px 12px;
+  border-radius: 6px;
+}
+
+/* --- Post cards (home page list) --- */
+.post-card {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.post-card:hover {
+  border-color: var(--primary);
+}
+.post-card h2 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+.post-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+.post-excerpt {
+  color: #374151;
+}
+
+/* --- Post detail page --- */
+.post-title {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+.post-content {
+  white-space: pre-wrap;
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+h1 {
+  margin-bottom: 16px;
+}
+
+/* Small screens: let the container breathe with less side padding. */
+@media (max-width: 480px) {
+  .container {
+    padding: 16px 12px;
+  }
+}

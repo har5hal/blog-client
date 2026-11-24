@@ -19,12 +19,6 @@ documented API contract (see `API.md`).
    ```
 4. Open the UI at http://localhost:3000.
 
-## Other scripts
-
-- `npm run build` — production build.
-- `npm run lint` — ESLint.
-- `npm run build:walkthrough` — regenerates `docs/ui-walkthrough.html`, the
-  interactive code walkthrough for presenting this project to a reviewer.
 
 ## Project layout
 
